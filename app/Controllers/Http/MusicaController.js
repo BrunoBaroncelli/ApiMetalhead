@@ -31,7 +31,7 @@ class MusicaController {
    * @param {Response} ctx.response
    */
   async store ({ request }) {
-    const data = request.only(["nome","genero","album","banda_id"])
+    const data = request.only(["musica_nome","genero","album","banda_id"])
     const musica = await Musica.create(data)
     return musica
   }
@@ -61,8 +61,8 @@ class MusicaController {
    */
   async update ({ params, request}) {
     const musica = await Musica.findOrFail(params.id)
-    const {nome,genero,album,banda_id} = request.only(["nome","genero","album","banda_id"])
-    musica.nome = nome
+    const {musica_nome,genero,album,banda_id} = request.only(["musica_nome","genero","album","banda_id"])
+    musica.musica_nome = musica_nome
     musica.genero = genero
     musica.album = album
     musica.banda_id = banda_id
