@@ -9,4 +9,4 @@ class Musica extends Model {
     }
 }
 
-module.exports = Aluno
+module.exports = Musica
