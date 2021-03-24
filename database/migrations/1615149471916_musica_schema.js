@@ -7,7 +7,7 @@ class MusicaSchema extends Schema {
   up () {
     this.create('musicas', (table) => {
       table.increments()
-      table.string("nome").notNullable()
+      table.string("musica_nome").notNullable()
       table.string("genero").nullable()
       table.string("album").nullable()
       table.integer("banda_id").unsigned().references("id").inTable("bandas").onUpdate("cascade").onDelete("cascade").notNullable()
