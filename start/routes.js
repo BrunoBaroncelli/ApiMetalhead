@@ -20,11 +20,11 @@ Route.get('/', () => {
   return { greeting: 'Metalhead' }
 })
 
-
-
 Route.post('/register','AuthController.register')
 Route.post('/authenticate','AuthController.authenticate')
+
+Route.get('/bandas','BandaController.index')
+
 Route.group(() => {
   Route.resource('/musicas','MusicaController').apiOnly()
-  Route.resource('/bandas','BandaController').apiOnly()
 }).middleware(["auth"])
