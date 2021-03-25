@@ -25,6 +25,6 @@ Route.get('/', () => {
 Route.post('/register','AuthController.register')
 Route.post('/authenticate','AuthController.authenticate')
 Route.group(() => {
-  Route.resource('/musica','MusicaController').apiOnly()
-  Route.resource('/banda','BandaController').apiOnly()
+  Route.resource('/musicas','MusicaController').apiOnly()
+  Route.resource('/bandas','BandaController').apiOnly()
 }).middleware(["auth"])
