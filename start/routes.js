@@ -24,6 +24,7 @@ Route.post('/register','AuthController.register')
 Route.post('/authenticate','AuthController.authenticate')
 
 Route.get('/bandas','BandaController.index')
+Route.get('/musicas/:id', 'AlunoController.show')
 
 Route.group(() => {
   Route.resource('/musicas','MusicaController').apiOnly()
