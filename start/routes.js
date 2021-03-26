@@ -24,8 +24,14 @@ Route.post('/register','AuthController.register')
 Route.post('/authenticate','AuthController.authenticate')
 
 Route.get('/bandas','BandaController.index')
-Route.get('/musicas/:id', 'AlunoController.show')
+Route.get('/musicas/:id/bandas', 'AlunoController.bandas')
 
 Route.group(() => {
   Route.resource('/musicas','MusicaController').apiOnly()
+  Route.resource("bandas", "BandaController").only([
+    "show",
+    "store",
+    "update",
+    "destroy",
+  ]);
 }).middleware(["auth"])
